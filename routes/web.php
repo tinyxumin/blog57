@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   // return view('welcome');
+   return redirect('/blog');
 });
+
+Route::any('/blog','BlogController@index')->name('blog.index');
+Route::get('/blog/{slug}','BlogController@showPost')->name('blog.detail');
